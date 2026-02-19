@@ -1,15 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/store';
+import './commonStyle.css';
 import './index.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AddBook from './components/AddBook/AddBook';
+import DashBoard from './components/DashBoard/DashBoard';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        {/* <App /> */}
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route index element={<DashBoard />} />
+            <Route path="add-new-book" element={<AddBook />} />
+            <Route path="/details/:id" element={<AddBook />}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
