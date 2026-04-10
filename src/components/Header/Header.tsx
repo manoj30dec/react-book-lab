@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 function Header() {
   const [menu, setMenu] = useState(true);
   const toggleOpen = () => {
-    console.log('toggleOpen');
-    setMenu(true)
+    console.log("toggleOpen");
+    setMenu(true);
   };
   const toggleClose = () => {
-    console.log('toggleClose');
-    setMenu(false)
+    console.log("toggleClose");
+    setMenu(false);
   };
   return (
     <>
       <header className="border-b font-[sans-serif] tracking-wide relative z-50">
         <section className="py-3 bg-[#1d294f] text-white text-center px-10">
           <p className="text-sm">
-            Book Lab | Books, View Books Details, and mark
+            Book Lab | View, Search, Add, Edit & Mark as read
           </p>
         </section>
 
@@ -52,74 +52,6 @@ function Header() {
                   ></path>
                 </svg>
               </button>
-
-              <div className="lg:flex max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
-                <ul className="lg:flex lg:gap-x-8 max-lg:space-y-2">
-                  <li className="mb-6 hidden max-lg:block">
-                    <Link to="#">
-                      <img
-                        src="https://readymadeui.com/readymadeui.svg"
-                        alt="logo"
-                        className="w-36"
-                      />
-                    </Link>
-                  </li>
-                  <li className="max-lg:border-b max-lg:py-3">
-                    <Link
-                      to="/"
-                      className="hover:text-[#007bff] font-semibold text-[#007bff] block text-[15px]"
-                    >
-                      Home
-                    </Link>
-                  </li>
-                </ul>
-
-                <Link
-                  to="/"
-                  className="m-auto absolute lg:left-2/4 lg:top-1/4 lg:-translate-x-1/2 max-lg:hidden"
-                >
-                  <img
-                    src="https://readymadeui.com/readymadeui.svg"
-                    alt="logo"
-                    className="w-40"
-                  />
-                </Link>
-
-                <ul className="lg:flex lg:space-x-8 max-lg:space-y-2 max-lg:mt-2 ml-auto">
-                  <li className="max-lg:border-b max-lg:py-3">
-                    <Link
-                      to="#"
-                      className="hover:text-[#007bff] font-semibold text-[#333] block text-[15px]"
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li className="max-lg:border-b max-lg:py-3">
-                    <Link
-                      to="#"
-                      className="hover:text-[#007bff] font-semibold text-[#333] block text-[15px]"
-                    >
-                      Contact
-                    </Link>
-                  </li>
-                  <li className="max-lg:border-b max-lg:py-3">
-                    <Link
-                      to="#"
-                      className="hover:text-[#007bff] font-semibold text-[#333] block text-[15px]"
-                    >
-                      Source
-                    </Link>
-                  </li>
-                  <li className="text-[15px] max-lg:border-b max-lg:py-3">
-                    <Link
-                      to="#"
-                      className="hover:text-[#007bff] font-semibold text-[#333] block text-[15px]"
-                    >
-                      Partner
-                    </Link>
-                  </li>
-                </ul>
-              </div>
             </div>
           )}
 
