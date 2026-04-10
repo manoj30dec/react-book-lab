@@ -28,7 +28,7 @@ const AddBook: React.FC = () => {
 
   const [bookRecord, setBookRecord] = useState<BookRecord | undefined>();
   const [formData, setFormData] = useState<FormData>({
-    id: crypto.randomUUID(),
+    id: param.id ? param.id : crypto.randomUUID(),
     title: "",
     author: "",
     publication_year: "",
@@ -42,6 +42,7 @@ const AddBook: React.FC = () => {
 
   // Fetch book record based on param.id
   useEffect(() => {
+    console.log(param);
     const book = books.find((book: BookRecord) => {
       return String(book.id) === String(param.id);
     });
@@ -113,7 +114,7 @@ const AddBook: React.FC = () => {
     if (success) {
       dispatch(addBook(formData));
       setFormData({
-        id: crypto.randomUUID(),
+        id: "",
         title: "",
         author: "",
         publication_year: "",
