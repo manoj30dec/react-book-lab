@@ -17,6 +17,7 @@ const bookSlice = createSlice({
   },
   reducers: {
     addBook: (state, param) => {
+      console.log(param);
       state.books.unshift(param.payload);
     },
     deleteBook: (state, id) => {

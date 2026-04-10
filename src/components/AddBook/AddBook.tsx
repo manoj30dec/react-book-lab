@@ -28,7 +28,7 @@ const AddBook: React.FC = () => {
 
   const [bookRecord, setBookRecord] = useState<BookRecord | undefined>();
   const [formData, setFormData] = useState<FormData>({
-    id: "53265",
+    id: crypto.randomUUID(),
     title: "",
     author: "",
     publication_year: "",
@@ -113,7 +113,7 @@ const AddBook: React.FC = () => {
     if (success) {
       dispatch(addBook(formData));
       setFormData({
-        id: "53265",
+        id: crypto.randomUUID(),
         title: "",
         author: "",
         publication_year: "",
