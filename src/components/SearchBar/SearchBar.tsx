@@ -6,9 +6,7 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   function onInputChange(event: ChangeEvent<HTMLInputElement>) {
-    if (event.target?.value) {
-      onSearch(event.target.value);
-    }
+    onSearch(event.target.value);
   }
 
   return (
@@ -26,7 +24,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
       <input
         type="search"
-        placeholder="Search Something..."
+        placeholder="Search by book title only"
         className="w-[630px] outline-none bg-white text-gray-600 text-sm px-4 py-3"
         onChange={onInputChange}
       />

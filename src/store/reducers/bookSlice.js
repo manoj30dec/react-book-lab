@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+const API_URL = process.env.REACT_APP_API_BASE_URL;
 
 // Async thunk to fetch data
 export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
-  const response = await axios.get("https://www.freetestapi.com/api/v1/books");
+  const response = await axios.get(`${API_URL}/books`);
   return response.data; // Return the data for the fulfilled action
 });
 
@@ -15,15 +16,15 @@ const bookSlice = createSlice({
     error: null,
   },
   reducers: {
-    addBook: (state,param) => {
-      state.books.unshift(param.payload)
+    addBook: (state, param) => {
+      state.books.unshift(param.payload);
     },
-    deleteBook:(state, id)=>{
-      console.log("delete book here")
+    deleteBook: (state, id) => {
+      console.log("delete book here");
     },
-    editBookRecord:(state, id)=>{
-      console.log("edit book record here")
-    }
+    editBookRecord: (state, id) => {
+      console.log("edit book record here");
+    },
   }, // You can add other reducers here
   extraReducers: (builder) => {
     builder
