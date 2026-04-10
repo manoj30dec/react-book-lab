@@ -1,8 +1,8 @@
-import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import { addBook } from '../../store/reducers/bookSlice';
-import validate from 'validate.js';
+import React, { useEffect, useState, ChangeEvent, FormEvent } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { addBook } from "../../store/reducers/bookSlice";
+import validate from "validate.js";
 
 interface FormData {
   id: string;
@@ -29,12 +29,12 @@ const AddBook: React.FC = () => {
   const [bookRecord, setBookRecord] = useState<BookRecord | undefined>();
   const [formData, setFormData] = useState<FormData>({
     id: "53265",
-    title: '',
-    author: '',
-    publication_year: '',
-    genre: 'Fiction',
-    description: '',
-    cover_image: "https://fakeimg.pl/667x1000/cc6600",
+    title: "",
+    author: "",
+    publication_year: "",
+    genre: "Fiction",
+    description: "",
+    cover_image: "/images/default.jpg",
   });
 
   const [errors, setErrors] = useState<ValidationErrors>({});
@@ -43,7 +43,7 @@ const AddBook: React.FC = () => {
   // Fetch book record based on param.id
   useEffect(() => {
     const book = books.find((book: BookRecord) => {
-      return String(book.id) === String(param.id)
+      return String(book.id) === String(param.id);
     });
     setBookRecord(book);
   }, [param.id]);
@@ -58,29 +58,29 @@ const AddBook: React.FC = () => {
   // Validation rules
   const constraints = {
     title: {
-      presence: { allowEmpty: false, message: 'is required' },
+      presence: { allowEmpty: false, message: "is required" },
     },
     author: {
-      presence: { allowEmpty: false, message: 'is required' },
+      presence: { allowEmpty: false, message: "is required" },
     },
     publication_year: {
-      presence: { allowEmpty: false, message: 'is required' },
+      presence: { allowEmpty: false, message: "is required" },
     },
     genre: {
-      presence: { allowEmpty: false, message: 'is required' },
+      presence: { allowEmpty: false, message: "is required" },
     },
     description: {
-      presence: { allowEmpty: false, message: 'is required' },
+      presence: { allowEmpty: false, message: "is required" },
     },
   };
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ): void => {
     const { name, value } = e.target;
     const label = e.target.previousElementSibling?.innerHTML || name;
 
-    if (value === '') {
+    if (value === "") {
       setErrors((prevErrors) => ({
         ...prevErrors,
         [name]: [`${label} is required`],
@@ -114,12 +114,12 @@ const AddBook: React.FC = () => {
       dispatch(addBook(formData));
       setFormData({
         id: "53265",
-        title: '',
-        author: '',
-        publication_year: '',
-        genre: 'Fiction',
-        description: '',
-        cover_image: "https://fakeimg.pl/667x1000/cc6600",
+        title: "",
+        author: "",
+        publication_year: "",
+        genre: "Fiction",
+        description: "",
+        cover_image: "/images/default.jpg",
       });
       setErrors({});
       navigate("/");
@@ -127,7 +127,11 @@ const AddBook: React.FC = () => {
   }, [success]);
 
   return (
-    <form className="form-horizontal" name="formBookAdd" onSubmit={handleSubmit}>
+    <form
+      className="form-horizontal"
+      name="formBookAdd"
+      onSubmit={handleSubmit}
+    >
       <div className="row">
         <div className="col">
           <label htmlFor="title">Book Title</label>
@@ -164,7 +168,9 @@ const AddBook: React.FC = () => {
             value={formData.publication_year}
             onChange={handleChange}
           />
-          {errors?.publication_year && <p className="error">{errors.publication_year[0]}</p>}
+          {errors?.publication_year && (
+            <p className="error">{errors.publication_year[0]}</p>
+          )}
         </div>
       </div>
       <div className="row">
@@ -192,7 +198,9 @@ const AddBook: React.FC = () => {
             value={formData.description}
             onChange={handleChange}
           ></textarea>
-          {errors?.description && <p className="error">{errors.description[0]}</p>}
+          {errors?.description && (
+            <p className="error">{errors.description[0]}</p>
+          )}
         </div>
       </div>
       <div className="row">
