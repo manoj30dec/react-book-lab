@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchBooks } from "../../store/reducers/bookSlice";
 
@@ -8,6 +8,7 @@ import BookList from "../../components/BookList/BookList";
 const DashBoard = () => {
   const dispatch = useDispatch<any>();
   const { books, status, error } = useSelector((state: any) => state.books);
+  // console.log(books);
   const [bookList, setBookList] = useState(books);
   function onSearch(searchTerm: any): void {
     if (searchTerm == "") {
