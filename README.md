@@ -4,8 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Run following commands to run this project fully
 
-Terminal One Command => npm run dev
-Terminal Two Command => npm run server
+Terminal one => npm start
 
 ## Available Scripts
 
