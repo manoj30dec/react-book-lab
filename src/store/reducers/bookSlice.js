@@ -17,14 +17,13 @@ const bookSlice = createSlice({
   },
   reducers: {
     addBook: (state, param) => {
-      console.log(param);
       state.books.unshift(param.payload);
     },
     deleteBook: (state, id) => {
       console.log("delete book here");
     },
-    editBookRecord: (state, id) => {
-      console.log("edit book record here");
+    editBookRecord: (state, param) => {
+      state.books.splice(param.payload.id, 1, param.payload);
     },
   }, // You can add other reducers here
   extraReducers: (builder) => {
@@ -42,6 +41,6 @@ const bookSlice = createSlice({
       });
   },
 });
-export const { addBook } = bookSlice.actions;
+export const { addBook, editBookRecord } = bookSlice.actions;
 
 export default bookSlice.reducer;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { addBook } from "../../store/reducers/bookSlice";
+import { addBook, editBookRecord } from "../../store/reducers/bookSlice";
 import validate from "validate.js";
 
 interface FormData {
@@ -18,7 +18,7 @@ interface ValidationErrors {
   [key: string]: string[];
 }
 
-interface BookRecord extends FormData {}
+interface existingRecord extends FormData {}
 
 const AddBook: React.FC = () => {
   const navigate = useNavigate();
@@ -26,7 +26,10 @@ const AddBook: React.FC = () => {
   const dispatch = useDispatch();
   const { books } = useSelector((state: any) => state.books);
 
-  const [bookRecord, setBookRecord] = useState<BookRecord | undefined>();
+  const [existingRecord, setExistingRecord] = useState<
+    existingRecord | undefined
+  >();
+  console.log(existingRecord);
   const [formData, setFormData] = useState<FormData>({
     id: param.id ? param.id : crypto.randomUUID(),
     title: "",
@@ -42,19 +45,18 @@ const AddBook: React.FC = () => {
 
   // Fetch book record based on param.id
   useEffect(() => {
-    console.log(param);
-    const book = books.find((book: BookRecord) => {
+    const book = books.find((book: existingRecord) => {
       return String(book.id) === String(param.id);
     });
-    setBookRecord(book);
+    setExistingRecord(book);
   }, [param.id]);
 
   // Update form data with book record
   useEffect(() => {
-    if (bookRecord) {
-      setFormData(bookRecord);
+    if (existingRecord) {
+      setFormData(existingRecord);
     }
-  }, [bookRecord]);
+  }, [existingRecord]);
 
   // Validation rules
   const constraints = {
@@ -109,21 +111,31 @@ const AddBook: React.FC = () => {
       setSuccess(true);
     }
   };
-
+  // console.log(existingRecord); // undefined
+  // console.log(!existingRecord); // true
+  // console.log(!!existingRecord); // false
+  const afterAddEdit = () => {
+    setFormData({
+      id: "",
+      title: "",
+      author: "",
+      publication_year: "",
+      genre: "Fiction",
+      description: "",
+      cover_image: "/images/default.jpg",
+    });
+    setErrors({});
+    navigate("/");
+  };
   useEffect(() => {
-    if (success) {
+    if (success && !existingRecord) {
+      console.log("need to create");
       dispatch(addBook(formData));
-      setFormData({
-        id: "",
-        title: "",
-        author: "",
-        publication_year: "",
-        genre: "Fiction",
-        description: "",
-        cover_image: "/images/default.jpg",
-      });
-      setErrors({});
-      navigate("/");
+      afterAddEdit();
+    } else if (success && existingRecord) {
+      console.log("need to edit");
+      dispatch(editBookRecord(formData));
+      afterAddEdit();
     }
   }, [success]);
 

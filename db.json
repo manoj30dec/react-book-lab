@@ -5,6 +5,7 @@
       "title": "Life of Pi",
       "cover_image": "/images/image-1.jpg",
       "author": "Yarn Martel",
+      "genre": "Fiction",
       "publication_year": "1989",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
@@ -13,6 +14,7 @@
       "title": "Deewar",
       "cover_image": "/images/image-4.jpg",
       "author": "Javed Salim",
+      "genre": "Fiction",
       "publication_year": "1975",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
@@ -22,6 +24,7 @@
       "cover_image": "/images/image-2.jpg",
       "author": "Chitra Tripathi",
       "publication_year": "1985",
+      "genre": "Fiction",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -30,6 +33,7 @@
       "cover_image": "/images/image-3.jpg",
       "author": "Atal Bihari Vajpai",
       "publication_year": "1989",
+      "genre": "Fiction",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -38,6 +42,7 @@
       "cover_image": "/images/image-4.jpg",
       "author": "Dharmendra",
       "publication_year": "1983",
+      "genre": "Fiction",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -46,6 +51,7 @@
       "cover_image": "/images/image-1.jpg",
       "author": "Africa",
       "publication_year": "1960",
+      "genre": "Classic",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -54,6 +60,7 @@
       "cover_image": "/images/image-2.jpg",
       "author": "Naseer",
       "publication_year": "1986",
+      "genre": "Classic",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -62,6 +69,7 @@
       "cover_image": "/images/image-3.jpg",
       "author": "Yarn Martel",
       "publication_year": "2025",
+      "genre": "Classic",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -70,6 +78,7 @@
       "cover_image": "/images/image-4.jpg",
       "author": "Yarn Martel",
       "publication_year": "2002",
+      "genre": "Fiction",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -78,6 +87,7 @@
       "cover_image": "/images/image-1.jpg",
       "author": "Yarn Martel",
       "publication_year": "1976",
+      "genre": "Classic",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -86,6 +96,7 @@
       "cover_image": "/images/image-2.jpg",
       "author": "Narender Modi",
       "publication_year": "1989",
+      "genre": "Classic",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -94,6 +105,7 @@
       "cover_image": "/images/image-3.jpg",
       "author": "Ranveer Kapoor",
       "publication_year": "1989",
+      "genre": "Fiction",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     },
     {
@@ -102,6 +114,7 @@
       "cover_image": "/images/image-4.jpg",
       "author": "Yarn Martel",
       "publication_year": "1976",
+      "genre": "Classic",
       "description": "The author of Life of Pi is Yann Martel, a Spanish-born Canadian author. Published in 2001, this renowned novel won the 2002 Man Booker Prize."
     }
   ],
